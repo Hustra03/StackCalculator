@@ -25,17 +25,27 @@ public class Calculator {
                 stack.push(x + y);
                 break;
             }
-            case SUB:{
-
+            case SUB: {
+                int y = stack.pop();
+                int x = stack.pop();
+                stack.push(x - y);
+                break;
             }
-            case MUL:{
-
+            case MUL: {
+                int y = stack.pop();
+                int x = stack.pop();
+                stack.push(x * y);
+                break;
             }
-            case DIV:{
-
+            case DIV: {
+                int y = stack.pop();
+                int x = stack.pop();
+                stack.push(x / y);
+                break;
             }
-            case VALUE:{
-                
+            case VALUE: {
+                stack.push(nxt);
+                break;
             }
         }
     }

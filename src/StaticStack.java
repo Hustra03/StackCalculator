@@ -4,11 +4,15 @@ public class StaticStack extends Stack{
         this.stackPointer=0;
         this.stack= new Item[stackLenth];
     }
-    public Item pop()
+    public int pop()
     {
-        return this.stack[0];
+        return this.stack[0].getValue();
     }
 
+    public void push(int item)
+    {
+        
+    }
     public void push(Item item)
     {
         
