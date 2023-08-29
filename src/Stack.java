@@ -1,8 +1,7 @@
 public abstract class Stack {
-    int stackPointer;
-    Item[] stack;
+    int top;
+    int[] stack;
     public Stack(){};
     abstract public int pop();
     abstract public void push(int item);
-    abstract public void push(Item item);
 }

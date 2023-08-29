@@ -1,20 +1,28 @@
-public class StaticStack extends Stack{
-    
-    public StaticStack(int stackLenth){
-        this.stackPointer=0;
-        this.stack= new Item[stackLenth];
-    }
-    public int pop()
-    {
-        return this.stack[0].getValue();
+public class StaticStack extends Stack {
+
+    public StaticStack(int stackLenth) {
+        this.top = 0;
+        this.stack = new int[stackLenth];
     }
 
-    public void push(int item)
-    {
-        
+    public int pop() {
+        if (top == 0) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
+
+            top--;
+            return this.stack[top];
+        }
     }
-    public void push(Item item)
-    {
-        
+
+    public void push(int item) {
+        if (top == this.stack.length) {
+            throw new ArrayIndexOutOfBoundsException();
+
+        } else {
+
+            this.stack[top] = item;
+            top++;
+        }
     }
 }

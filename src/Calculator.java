@@ -6,7 +6,7 @@ public class Calculator {
     public Calculator(Item[] expr) {
         this.expr = expr;
         this.ip = 0;
-        this.stack = new Stack();
+        this.stack = new StaticStack(4);
     }
 
     public int run() {
@@ -44,7 +44,7 @@ public class Calculator {
                 break;
             }
             case VALUE: {
-                stack.push(nxt);
+                stack.push(nxt.getValue());
                 break;
             }
         }
