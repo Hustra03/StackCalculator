@@ -3,10 +3,14 @@ public class Calculator {
     int ip;
     Stack stack;
 
-    public Calculator(Item[] expr) {
+    public Calculator(Item[] expr,boolean UseDynamicStack) {
         this.expr = expr;
         this.ip = 0;
-        this.stack = new StaticStack(4);
+        if (UseDynamicStack) {
+            this.stack = new DynamicStack(4);
+        }
+        else
+        {this.stack = new StaticStack(10);}
     }
 
     public int run() {

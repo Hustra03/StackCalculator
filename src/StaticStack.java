@@ -6,23 +6,28 @@ public class StaticStack extends Stack {
     }
 
     public int pop() {
-        if (top == 0) {
+        if (top < 0) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
-
+            int returnValue=this.stack[top];
             top--;
-            return this.stack[top];
+            return returnValue;
         }
     }
 
     public void push(int item) {
-        if (top == this.stack.length) {
+        if (top > this.stack.length-1) {
             throw new ArrayIndexOutOfBoundsException();
 
         } else {
-
-            this.stack[top] = item;
             top++;
+            this.stack[top] = item;
+            /*for (int i = 0; i < stack.length; i++) {
+                if (this.stack[i]!=0) {
+                    
+            System.out.println("Current Stack Position"+i+" : "+this.stack[i] );
+                }
+            }*/
         }
     }
 }

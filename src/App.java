@@ -7,9 +7,11 @@ public class App {
                 Item.Value(2),
                 Item.Value(5),
                 Item.Mul(),
-                Item.Add()
+                Item.Add(),
         };
-        Calculator calc = new Calculator(expr);
+
+        boolean UseDynamicStack=false;
+        Calculator calc = new Calculator(expr,UseDynamicStack);
         int res = calc.run();
         System.out.println(" Calculator: res = " + res);
     }
