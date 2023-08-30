@@ -7,7 +7,7 @@ public class Calculator {
         this.expr = expr;
         this.ip = 0;
         if (UseDynamicStack) {
-            this.stack = new DynamicStack(4);
+            this.stack = new DynamicStack(1);
         }
         else
         {this.stack = new StaticStack(10);}
