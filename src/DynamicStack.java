@@ -5,7 +5,7 @@ public class DynamicStack extends Stack {
                                  // reduce length by 1/sizeIncreaseAndDecrease
     int belowLengthDivider = 2; // Deterimes how much the stack should be below max length before it decreases,
                                 // aka current top<this.stack.length/belowLengthDivider
-    int sizeIncreaseAndDecrease = 2; // Deterimes how many fractions the stack length will decrease, aka 4 => length
+    int sizeIncreaseAndDecrease = 3; // Deterimes how many fractions the stack length will decrease, aka 4 => length
                                      // = 3/4 of original and increase to 5/4 +1, with the +1 in order to avoid
                                      // problems with stacks which are very small and thus length/4 < 1, and thus =0
                                      // when considering int
@@ -54,7 +54,7 @@ public class DynamicStack extends Stack {
             timesIncreased++;
             System.out.println("Increasing Stack length nr. "+timesIncreased+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
         }
-        if (belowLengthDeadLine < belowLengthDeadLineNumber) {
+        if (belowLengthDeadLine < belowLengthDeadLineNumber &&(top > (stack.length - stack.length / belowLengthDivider)) ) {
             belowLengthDeadLine++;
         }
         top++;

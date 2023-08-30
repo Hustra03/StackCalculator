@@ -47,9 +47,9 @@ public class App {
     // Below is to run stack benchmark
     public static void main(String[] args) throws Exception {
 
-        StaticStack testStaticStack = new StaticStack(1024);
+        StaticStack testStaticStack = new StaticStack(1024);        
         DynamicStack testDynamicStack = new DynamicStack(4);
-        int loopLength=1000;
+        /*int loopLength=1000;
 
         long t0=System.nanoTime();
 
@@ -79,7 +79,7 @@ public class App {
         System.out.println("Static Stack Push "+ loopLength +" total time:" + (t1-t0)+ " ns |" + (t1-t0)/loopLength+" ns per element");
         System.out.println("Static Stack Pop "+ loopLength +" total time:" + (t2-t1)+ " ns |"+ (t2-t1)/loopLength+" ns per element");
         System.out.println("Dynamic Stack Push "+ loopLength +" total time:" + (t3-t2)+ " ns |"+ (t3-t2)/loopLength+" ns per element");
-        System.out.println("Dynamic Stack Pop "+ loopLength +" total time:" + (t4-t3)+ " ns |"+ (t4-t3)/loopLength+" ns per element");
+        System.out.println("Dynamic Stack Pop "+ loopLength +" total time:" + (t4-t3)+ " ns |"+ (t4-t3)/loopLength+" ns per element");*/
 
     }
 }
