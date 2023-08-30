@@ -1,10 +1,10 @@
 public class DynamicStack extends Stack {
 
-    int belowLengthDeadLine = 4; // Determines how many pops when below stack.length/belowLengthDivider before
-                                 // reduce length by
+    int belowLengthDeadLine = 8; // Determines how many pops when below stack.length/belowLengthDivider before
+                                 // reduce length by 1/sizeIncreaseAndDecrease
     int belowLengthDivider = 2; // Deterimes how much the stack should be below max length before it decreases,
                                 // aka current top<this.stack.length/belowLengthDivider
-    int sizeIncreaseAndDecrease = 4; // Deterimes how many fractions the stack length will decrease, aka 4 => length
+    int sizeIncreaseAndDecrease = 8; // Deterimes how many fractions the stack length will decrease, aka 4 => length
                                      // = 3/4 of original and increase to 5/4 +1, with the +1 in order to avoid
                                      // problems with stacks which are very small and thus length/4 < 1, and thus =0
                                      // when considering int
@@ -28,7 +28,7 @@ public class DynamicStack extends Stack {
                     newStack[i] = this.stack[i];
                 }
                 this.stack = newStack;
-                belowLengthDeadLine=4;
+                belowLengthDeadLine=8;
                 System.out.println("Decreasing Stack length, new length: " + this.stack.length);
             }
             int returnValue = this.stack[top];
@@ -44,10 +44,10 @@ public class DynamicStack extends Stack {
                 newStack[i] = this.stack[i];
             }
             this.stack = newStack;
-            belowLengthDeadLine = 4;
+            belowLengthDeadLine = 8;
             System.out.println("Increasing Stack length, new length: " + this.stack.length);
         }
-        if (belowLengthDeadLine < 4) {
+        if (belowLengthDeadLine < 8) {
             belowLengthDeadLine++;
         }
         top++;
