@@ -18,9 +18,7 @@ public class DynamicStack extends Stack {
         if (top < 0) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
-            int returnValue = this.stack[top];
-            top--;
-            if (top < this.stack.length / belowLengthDivider) {
+            if (top < (stack.length - stack.length / belowLengthDivider)) {
                 belowLengthDeadLine -= 1;
             }
             if (belowLengthDeadLine <= 0) {
@@ -30,8 +28,11 @@ public class DynamicStack extends Stack {
                     newStack[i] = this.stack[i];
                 }
                 this.stack = newStack;
+                belowLengthDeadLine=4;
                 System.out.println("Decreasing Stack length, new length: " + this.stack.length);
             }
+            int returnValue = this.stack[top];
+            top--;
             return returnValue;
         }
     }
