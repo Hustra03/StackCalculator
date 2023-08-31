@@ -15,7 +15,7 @@ public class DynamicStack extends Stack {
 //Includera discussion om sizeIncreaseAndDecrease, lägre leder till större steg => färre antal kopieringar, men också större stack ändringar
 
     public DynamicStack(int stackLenth) {
-        this.top = 0;
+        this.top = -1;
         this.stack = new int[stackLenth];
     }
 
@@ -34,8 +34,8 @@ public class DynamicStack extends Stack {
                 }
                 this.stack = newStack;
                 belowLengthDeadLine=belowLengthDeadLineNumber;
-                timesReduced++;
-                System.out.println("Decreasing Stack length nr. "+timesReduced+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
+                //timesReduced++;
+                //System.out.println("Decreasing Stack length nr. "+timesReduced+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
             }
             int returnValue = this.stack[top];
             top--;
@@ -54,7 +54,7 @@ public class DynamicStack extends Stack {
             timesIncreased++;
             System.out.println("Increasing Stack length nr. "+timesIncreased+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
         }
-        if (belowLengthDeadLine < belowLengthDeadLineNumber &&(top > (stack.length - stack.length / belowLengthDivider)) ) {
+        if (belowLengthDeadLine < belowLengthDeadLineNumber) {
             belowLengthDeadLine++;
         }
         top++;

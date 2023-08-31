@@ -49,6 +49,10 @@ public class App {
 
         StaticStack testStaticStack = new StaticStack(1024);        
         DynamicStack testDynamicStack = new DynamicStack(4);
+        testStaticStack.push(10);
+        System.out.println(testStaticStack.pop());
+        testDynamicStack.push(10);
+        System.out.println(testDynamicStack.pop());
         /*int loopLength=1000;
 
         long t0=System.nanoTime();

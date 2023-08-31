@@ -1,7 +1,7 @@
 public class StaticStack extends Stack {
 
     public StaticStack(int stackLenth) {
-        this.top = 0;
+        this.top = -1;
         this.stack = new int[stackLenth];
     }
 
