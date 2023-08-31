@@ -46,14 +46,13 @@ public class App {
      */
     // Below is to run stack benchmark
     public static void main(String[] args) throws Exception {
-        
-        int repeatAmount=1000;
+
+        int repeatAmount = 1000;
         long[] timeStaticPush = new long[repeatAmount];
         long[] timeStaticPop = new long[repeatAmount];
         long[] timeDynamicPush = new long[repeatAmount];
         long[] timeDynamicPop = new long[repeatAmount];
         int loopLength = 1000;
-        
 
         for (int j = 0; j < repeatAmount; j++) {
 
@@ -99,10 +98,10 @@ public class App {
             timeDynamicPop[j] = (t4 - t3);
         }
 
-        long minimumStaticPush = 0;
-        long minimumStaticPop = 0;
-        long minimumDynamicPush = 0;
-        long minimumDynamicPop = 0;
+        long minimumStaticPush = 11111111;
+        long minimumStaticPop = 11111111;
+        long minimumDynamicPush = 11111111;
+        long minimumDynamicPop = 11111111;
 
         long averageStaticPush = 0;
         long averageStaticPop = 0;
@@ -110,25 +109,19 @@ public class App {
         long averageDynamicPop = 0;
 
         for (int j = 0; j < repeatAmount; j++) {
-            if (j == 0) {
+            if (timeStaticPush[j] < minimumStaticPush) {
                 minimumStaticPush = timeStaticPush[j];
-                minimumStaticPop = timeStaticPop[j];
-                minimumDynamicPush = timeDynamicPush[j];
-                minimumDynamicPop = timeDynamicPop[j];
-            } else {
-                if (timeStaticPush[j] < minimumStaticPush) {
-                    minimumStaticPush = timeStaticPush[j];
-                }
-                if (timeStaticPop[j] < minimumStaticPop) {
-                    minimumStaticPop = timeStaticPop[j];
-                }
-                if (timeDynamicPush[j] < minimumDynamicPush) {
-                    minimumDynamicPush = timeDynamicPush[j];
-                }
-                if (timeDynamicPop[j] < minimumDynamicPop) {
-                    minimumDynamicPop = timeDynamicPop[j];
-                }
             }
+            if (timeStaticPop[j] < minimumStaticPop) {
+                minimumStaticPop = timeStaticPop[j];
+            }
+            if (timeDynamicPush[j] < minimumDynamicPush) {
+                minimumDynamicPush = timeDynamicPush[j];
+            }
+            if (timeDynamicPop[j] < minimumDynamicPop) {
+                minimumDynamicPop = timeDynamicPop[j];
+            }
+
             averageStaticPush += timeStaticPush[j];
             averageStaticPop += timeStaticPop[j];
             averageDynamicPush += timeDynamicPush[j];
