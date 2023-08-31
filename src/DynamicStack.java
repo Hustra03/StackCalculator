@@ -34,7 +34,6 @@ public class DynamicStack extends Stack {
                 }
                 this.stack = newStack;
                 belowLengthDeadLine=belowLengthDeadLineNumber;
-                //timesReduced++;
                 //System.out.println("Decreasing Stack length nr. "+timesReduced+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
             }
             int returnValue = this.stack[top];
@@ -51,8 +50,8 @@ public class DynamicStack extends Stack {
             }
             this.stack = newStack;
             belowLengthDeadLine = belowLengthDeadLineNumber;
-            timesIncreased++;
-            System.out.println("Increasing Stack length nr. "+timesIncreased+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
+
+            //System.out.println("Increasing Stack length nr. "+timesIncreased+", new length: " + this.stack.length);//Used to find optimal numbers for above, comment away this part
         }
         if (belowLengthDeadLine < belowLengthDeadLineNumber) {
             belowLengthDeadLine++;

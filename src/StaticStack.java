@@ -8,11 +8,11 @@ public class StaticStack extends Stack {
     public int pop() {
         if (top < 0) {
             throw new ArrayIndexOutOfBoundsException();
-        } else {
-            int returnValue=this.stack[top];
-            top--;
-            return returnValue;
-        }
+        } 
+        int returnValue=this.stack[top];
+        top--;
+        return returnValue;
+        
     }
 
     public void push(int item) {
