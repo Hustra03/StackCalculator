@@ -12,7 +12,6 @@ public class StaticStack extends Stack {
         int returnValue=this.stack[top];
         top--;
         return returnValue;
-        
     }
 
     public void push(int item) {
