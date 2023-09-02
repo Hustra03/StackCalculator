@@ -25,24 +25,29 @@ public class App {
 
             StaticStack testStaticStack = new StaticStack(1024);
             long t0 = System.nanoTime();
-            for (int i = 0; i < 1000; i++) {
-                testStaticStack.push(i);
-            }
-            for (int i = 0; i < 1000; i++) {
-                testStaticStack.pop();
+            for (int a = 0; a < 1000; a++) {
+                for (int i = 0; i < 1000; i++) {
+                    testStaticStack.push(i);
+                }
+                for (int i = 0; i < 1000; i++) {
+                    testStaticStack.pop();
+                }
             }
             long t1 = System.nanoTime();
             if (timeStaticMin > (t1 - t0)) {
                 timeStaticMin = (t1 - t0);
             }
 
-            DynamicStack testDynamicStack = new DynamicStack(2);
+            DynamicStack testDynamicStack = new DynamicStack(4);
             t0 = System.nanoTime();
-            for (int i = 0; i < 1000; i++) {
-                testDynamicStack.push(i);
-            }
-            for (int i = 0; i < 1000; i++) {
-                testDynamicStack.pop();
+            for (int a = 0; a < 1000; a++) {
+
+                for (int i = 0; i < 1000; i++) {
+                    testDynamicStack.push(i);
+                }
+                for (int i = 0; i < 1000; i++) {
+                    testDynamicStack.pop();
+                }
             }
             t1 = System.nanoTime();
             if (timeDynamicMin > (t1 - t0)) {
